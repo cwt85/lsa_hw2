@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="image/lineicon.png" />
+    <title>我完成了</title>
+  </head>
+  <body style="background-color: #f0f0f0">
+    <h1>113213030 陳瑋廷</h1>
+    <h2 style="font-size: 40px">1.在 docker 裡面，裡面的這個 root，是「使用者」 還是 真的 「 root 」呢?</h2>
+    <p style="font-size: 30px">從vm的角度來看是使用者，而從docker的角度來看是真正的root</p>
+    <h2 style="font-size: 40px">
+      2.在 docker 裡面， 把 nginx 的 container 跑起來
+    </h2>
+    <ol style="font-size: 30px">
+      <li>在docker中把nginx跑起來</li>
+      <p style="font-size: 20px">
+        <code>-d</code>在背景執行、<code>-p 8088:80</code
+        >將容器的8088端口映射到主機的80端口(http)、
+        <code>--name my-lsa-nginx</code
+        >指定容器名稱、<code>nginx</code>為使用的image名稱
+      </p>
+      <img src="image/hw5/docker_run_nginx.png" alt="run nginx" width="1200" />
+      <li>確認process狀況</li>
+      <p style="font-size: 20px">
+        <code>docker ps</code>可以看到正常跑起來了(名稱有出現、port有映射)
+      </p>
+      <img
+        src="image/hw5/docker_check_process.png"
+        alt="check process"
+        width="1200"
+      />
+      <li>在瀏覽器輸入 localhost:8088</li>
+      <p style="font-size: 20px">顯示歡迎訊息</p>
+      <img
+        src="image/hw5/docker_nginx_result.png"
+        alt="check process"
+        width="1200"
+      />
+    </ol>
+    <br />
+    <button
+      id="mybtn"
+      onclick="
+        window.location.href =
+          'https://youtu.be/dQw4w9WgXcQ?si=rdHQsA6IAdVsfcbU'
+      "
+      target="_blank"
+    >
+      返回首頁
+    </button>
+    <style>
+      #mybtn {
+        background-color: gray; /* 綠色背景 */
+        border: none; /* 無邊框 */
+        color: white; /* 白色文字 */
+        padding: 15px 32px; /* 上下15px，左右32px的內邊距 */
+        text-align: center; /* 文字置中 */
+        display: inline-block; /* 行內塊元素 */
+        font-size: 16px; /* 字體大小16px */
+        margin: 4px 2px; /* 上下4px，左右2px的外邊距 */
+        cursor: pointer; /* 鼠標變成手型 */
+      }
+      code {
+        background-color: #3e3e3e; /* 深灰色背景，比純紅色更適合閱讀 Bash */
+        color: #f8f8f2; /* 淺色文字 */
+        padding: 2px 6px; /* 內邊距 */
+        border-radius: 4px; /* 圓角邊框 */
+        font-family: "Courier New", Courier, monospace; /* 等寬字體 */
+        font-size: 0.9em; /* 稍微縮小字體以符合行內樣式 */
+      }
+    </style>
+  </body>
+</html>
